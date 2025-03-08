@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование отеля</title>
+    <link rel="stylesheet" href="/css/booking.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Ваши стили */
+    </style>
+</head>
+
+<body>
+    <div class="container__booking">
+        <h2>Бронирование отеля</h2>
+
+
+        <div class="header__item">
+            <a href="index.html" class="text-reset header__book-info">Главная страница</a>
+        </div>
+
+
+        <form id="bookingForm" action="process_booking.php" method="post">
+            <label>Дата заезда:</label>
+            <input type="date" id="checkin" name="checkin" required onchange="updateCheckoutDate()">
+
+            <label>Дата выезда:</label>
+            <input type="date" id="checkout" name="checkout" required>
+
+            <label>Место отдыха:</label>
+            <select name="destination">
+                <option value="Мальдивы">Мальдивы</option>
+                <option value="Италия">Италия</option>
+                <option value="Мексика">Мексика</option>
+            </select>
+
+            <label>Отель:</label>
+            <select name="hotel">
+                <option value="Отель A">Отель A</option>
+                <option value="Отель B">Отель B</option>
+                <option value="Отель C">Отель C</option>
+                <option value="Отель D">Отель D</option>
+            </select>
+
+            <label>Число комнат:</label>
+            <select name="rooms">
+                <option value="1">1 комната</option>
+                <option value="2">2 комнаты</option>
+                <option value="3">3 комнаты</option>
+            </select>
+
+            <label>Балкон:</label>
+            <select name="balcony">
+                <option value="Да">Да</option>
+                <option value="Нет">Нет</option>
+            </select>
+
+            <label>Тип питания:</label>
+            <select name="meal_type">
+                <option value="Без питания">Без питания</option>
+                <option value="Завтрак">Завтрак</option>
+                <option value="Всё включено">Всё включено</option>
+            </select>
+
+            <label>Email для регистрации:</label>
+            <input type="email" name="email" required>
+
+            <div class="buttons__form">
+                <button type="submit">Оформить бронь</button>
+                <button type="button" onclick="resetForm()" style="background: #dc3545;">Очистить</button>
+            </div>
+        </form>
+    </div>
+    <script src="/booking.js"></script>
+</body>
+
+</html>
